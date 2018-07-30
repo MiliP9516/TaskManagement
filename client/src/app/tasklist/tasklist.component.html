@@ -1,0 +1,37 @@
+<div class="panel panel-primary">
+  <div class="panel panel-heading"> Task List <span style="float: right"><a style="color:white" (click)="logout()">Logout</a></span>
+  </div>
+  <div class="panel panel-body">
+    <div class="table-responsive">
+    <table class="table">
+      <thead> 
+      <tr>
+        <th>Allocated By</th>
+        <th>Allocate To</th>
+        <th>Task Name</th>
+        <th>Task Description</th>
+        <th>Planned Date</th>
+        <th>Duration</th>
+        <th>Status</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tr *ngFor="let task of tasks">
+        <td>{{task.allocatedby}}</td>
+        <td>{{task.allocateto}}</td>
+        <td>{{task.taskname}}</td>
+        <td>{{task.taskdesc}}</td>
+        <td>{{task.planneddate}}</td>
+        <td>{{task.duration}}</td>
+        <td><select value="{{task.status}}"(change)="changeStatus($event, task._id)">
+            <option value="Pending">Pending</option>
+            <option value="Finished">Finished</option>
+          </select> 
+        </td>
+        <td><button class="btn btn-primary" (click)="updatetask(task._id)">Update</button></td>
+      </tr>
+    </table>
+    </div>
+    <button class="btn btn-primary" (click)="tasknew()">New Task</button>  
+  </div>
+</div>

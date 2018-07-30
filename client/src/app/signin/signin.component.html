@@ -1,0 +1,49 @@
+<div class="container">    
+<div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+<div class="panel panel-primary" >
+  <div class="panel-heading">
+      <div class="panel-title">Sign In</div>
+  </div> 
+  <div style="padding-top:30px" class="panel-body" >
+
+    <form class="form-horizontal" [formGroup]="signinForm" (ngSubmit)="onSignInFormSubmit()">
+                      
+      <div style="margin-bottom: 25px" class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input type="email" class="form-control" formControlName="email" placeholder="email">                                        
+      </div>
+      <div class="alert alert-warning" *ngIf="email.touched && email.invalid">
+        <div *ngIf="email.errors['required']">Email is required.</div>   
+        <div *ngIf="email.errors['email']">Email is not valid.</div>             
+      </div>
+                  
+      <div style="margin-bottom: 25px" class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+        <input type="password" class="form-control" formControlName="password" placeholder="password">
+      </div>
+      <div class="alert alert-warning" *ngIf="password.touched && password.invalid">
+        <div *ngIf="password.errors['required']">Password is required.</div>
+        <div *ngIf="password.errors['minlength']">Password should not be less than 5 characters.</div>
+      </div>
+    
+      <div style="margin-top:10px" class="form-group">
+        <div class="col-sm-12 controls">
+          <button type="submit" class="btn btn-primary">Sign In</button>
+        </div>
+        <div class="alert alert-danger" *ngIf="error">
+          {{errorMessage}}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-12 control">
+          <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+              Not a Member? Please <a routerLink="/signup" routerLinkActive="active">Sign Up</a> Here.
+          </div>
+        </div>
+      </div>    
+    </form>  
+  </div>
+</div>                     
+</div>  
+</div>

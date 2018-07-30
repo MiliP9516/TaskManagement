@@ -1,0 +1,51 @@
+<div class="container">    
+<div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">        
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="panel-title">Sign Up</div>
+    </div> 
+    <div style="padding-top:30px" class="panel-body" >
+        <form class="form-horizontal" [formGroup]="signupForm" (ngSubmit)="onSignUpFormSubmit()"> 
+                <div>
+                    <label for="username" class="col-md-3 control-label">Username</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" formControlName="username" placeholder="Username">
+                        <div class="alert alert-warning" *ngIf="username.touched && username.invalid">
+                            <div *ngIf="username.errors['required']">Username is required.</div>                
+                        </div>
+                    </div>                    
+                </div>
+
+                <div>
+                    <label for="email" class="col-md-3 control-label">Email</label>
+                    <div class="col-md-9">
+                        <input type="email" class="form-control" formControlName="email" placeholder="Email">
+                        <div class="alert alert-warning" *ngIf="email.touched && email.invalid">
+                            <div *ngIf="email.errors['required']">Email is required.</div>   
+                            <div *ngIf="email.errors['email']">Email is not valid.</div>             
+                        </div>
+                    </div>                    
+                </div>
+
+                <div>
+                    <label for="password" class="col-md-3 control-label">Password</label>
+                    <div class="col-md-9">
+                        <input type="password" class="form-control" formControlName="password" placeholder="Password">
+                        <div class="alert alert-warning" *ngIf="password.touched && password.invalid">
+                            <div *ngIf="password.errors['required']">Password is required.</div>
+                            <div *ngIf="password.errors['minlength']">Password should not be less than 5 characters.</div>
+                        </div>
+                    </div>                    
+                </div>
+                <div style="margin-top:10px" class="form-group">
+                    <div class="col-sm-12 controls">
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                    </div>
+                </div>
+            
+        </form>    
+    </div>  
+</div>
+</div>
+</div>  
+

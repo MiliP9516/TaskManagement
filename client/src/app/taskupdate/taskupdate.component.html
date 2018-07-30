@@ -1,0 +1,67 @@
+<div class="panel panel-primary">
+  <div class="panel panel-heading">Update Task
+      <span style="float: right"><a style="color:white" (click)="logout()">Logout</a></span>
+  </div>
+  <div class="panel panel-body">
+      <form class="form-horizontal" [formGroup]="taskupdateForm" (ngSubmit)="isUpdateNew()">
+          <div>
+              <label class="col-md-3 control-label"> Allocated By </label>
+              <div class="col-md-9">
+              <input type="text" class="form-control" formControlName="allocatedby"/>
+              </div>        
+            </div>
+      
+          <div>
+            <label class="col-md-3 control-label"> Allocate To </label>
+            <div class="col-md-9">
+            <input type="text" class="form-control" formControlName="allocateto"/>
+            </div>      
+          </div>
+      
+          <div>
+            <label class="col-md-3 control-label"> Task Name </label>
+            <div class="col-md-9">
+            <input type="text" class="form-control" formControlName="taskname" />   
+            </div>       
+          </div>
+      
+          <div>
+            <label class="col-md-3 control-label"> Task Description </label>
+            <div class="col-md-9">
+            <input type="text" class="form-control" formControlName="taskdesc" />
+            </div>          
+          </div>
+      
+          <div>
+            <label class="col-md-3 control-label"> Planned Date </label>
+            <div class="col-md-9">
+            <input type="text" class="form-control" formControlName="planneddate" />
+            </div>         
+          </div>
+      
+          <div>
+            <label class="col-md-3 control-label"> Duration </label>
+            <div class="col-md-9">
+            <input type="text" class="form-control" formControlName="duration" /> 
+            </div>         
+          </div>
+      
+          <div>
+            <label class="col-md-3 control-label">Status</label>
+            <div class="col-md-9">
+              <select class="form-control" formControlName="status">
+                <option value="Pending">Pending</option>
+                <option value="Finished">Finished</option>
+              </select> 
+            </div>
+          </div>
+
+          <div style="margin-top:10px ">
+              <button type="submit" style="float: right" class="btn btn-primary">Update</button>
+              <button type="button" class="btn btn-primary" (click)="back()">Back</button>
+              <div class="alert alert-success" *ngIf = "alert">{{alertMessage}}</div>
+          </div>
+      </form>
+      
+  </div>
+</div>
