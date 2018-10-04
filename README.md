@@ -8,6 +8,5 @@
 Manage the task details. Only sign in user can see the task created by him. User can create and update the task. Change the status of task.
  
 ![alt text](https://github.com/MiliPatel82/TaskManagement/blob/master/Screenshots/SignIn.png "SignIn Page")
-
 ![alt text](https://github.com/MiliPatel82/TaskManagement/blob/master/Screenshots/Tasklist.png "TaskList")
 ![alt text](https://github.com/MiliPatel82/TaskManagement/blob/master/Screenshots/UpdateTask.png "TaskUpdate Page")
