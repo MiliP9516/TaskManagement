@@ -7,7 +7,7 @@ const task = require('./routes/task.route');
 const PORT = 3000;
 
 const mongooes = require('mongoose');
-mongooes.connect('mongodb://localhost:27017/ProjectManagement');
+mongooes.connect('mongodb://localhost:27017/ProjectManagement', { useNewUrlParser: true });
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
